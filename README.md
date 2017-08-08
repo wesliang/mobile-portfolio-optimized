@@ -4,6 +4,8 @@ Optimization of this online portfolio [Critical Rendering Path course](https://w
 
 ### Getting started
 
+You can view the site live from here: https://wesliang.github.io/mobile-portfolio-optimized/
+
 #### Installation
 
 Some useful tips to get up and running:
