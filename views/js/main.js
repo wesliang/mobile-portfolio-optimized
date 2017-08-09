@@ -437,8 +437,8 @@ var resizePizzas = function(size) {
       default:
         console.log("bug in sizeSwitcher");
     }
-    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
-    for (var i = 0; i < randomPizzas.length; i++) {
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer").length;
+    for (var i = 0; i < randomPizzas; i++) {
       randomPizzas[i].style.width = newWidth + "%";
     }
   }
@@ -510,20 +510,22 @@ window.addEventListener('scroll', updatePositions);
 
 // Calculates pizza per screen ratio and then generates the sliding pizzas when the page loads.
 var screenHeight = window.screen.height;
+var elem = '';
 var cols = 8;
 var s = 256;
 var rows = screenHeight / s;
 var pizzaCount = rows * cols;
+var movingPizzas = document.getElementById('movingPizzas1');
 document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < pizzaCount; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
   updatePositions();
 });
